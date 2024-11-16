@@ -53,18 +53,20 @@ COOKIES_ENABLED = False
 #DOWNLOADER_MIDDLEWARES = {
 #    "zalan.middlewares.CustomProxyMiddleware": 543,
 #}
+## settings.py
 
-#SCRAPEOPS_API_KEY = 'fc5ed6ff-6329-4999-8cf3-214a843ded72'
-#$SCRAPEOPS_PROXY_ENABLED = True
-
-#DOWNLOADER_MIDDLEWARES = {
-#    'scrapeops_scrapy_proxy_sdk.scrapeops_scrapy_proxy_sdk.ScrapeOpsScrapyProxySdk': 725,
-#}
 SCRAPEOPS_API_KEY = 'fc5ed6ff-6329-4999-8cf3-214a843ded72'
-SCRAPEOPS_PROXY_ENABLED = True
+SCRAPEOPS_FAKE_HEADERS_ENABLED = True
 
 DOWNLOADER_MIDDLEWARES = {
-    'zalan.middlewares.ScrapeOpsProxyMiddleware': 725,
+    'zalan.middlewares.ScrapeOpsFakeBrowserHeadersMiddleware': 400,
+}
+
+SCRAPEOPS_API_KEY = 'fc5ed6ff-6329-4999-8cf3-214a843ded72'
+SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
+
+DOWNLOADER_MIDDLEWARES = {
+    'zalan.middlewares.ScrapeOpsFakeUserAgentMiddleware': 400,
 }
 
 

@@ -5,7 +5,6 @@ class ProductsSpider(scrapy.Spider):
     name = "products"
     allowed_domains = ["zalando.co.uk"]
 
-
     def start_requests(self):
         start_urls = []
         for p in range(1, 429):
